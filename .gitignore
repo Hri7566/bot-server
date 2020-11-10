@@ -1,0 +1,10 @@
+# Node stuff
+node_modules
+.env
+
+# Web stuff
+private.key
+private.pem
+public.pem
+certificate.crt
+ca_bundle.crt

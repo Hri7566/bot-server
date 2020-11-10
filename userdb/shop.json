@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "name": "frog",
+            "desc": "A frog.",
+            "id": 0,
+            "price": 5
+        },
+        {
+            "name": "DJDanwich",
+            "desc": "N/A",
+            "id": 1,
+            "price": 10
+        },
+        {
+            "name": "Errorwich",
+            "desc": "N/A",
+            "id": 2,
+            "price": 10
+        },
+        {
+            "name": "Ludwigwich",
+            "desc": "N/A",
+            "id": 3,
+            "price": 10
+        },
+        {
+            "name": "Grantwich",
+            "desc": "N/A",
+            "id": 4,
+            "price": 10
+        },
+        {
+            "name": "lmofwich",
+            "desc": "N/A",
+            "id": 5,
+            "price": 10
+        }
+    ]
+}

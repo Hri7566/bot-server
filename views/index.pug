@@ -1,0 +1,13 @@
+extends template
+block content
+    - var n = 0;
+    div(id="bigbox")
+        h1(id="boxtitle") #{title}
+        div(id="chat")
+            ul
+                //- while n < 100
+                //-     li(class="message")
+                //-         p <span style="font-weight: bold;">#{title}</span>: Chat message
+                //-     - n++;
+        input(type="text", id="chatinput", name="chatinput", placeholder="Type here to chat.")
+        script(src="/client.js")

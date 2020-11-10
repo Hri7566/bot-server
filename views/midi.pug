@@ -1,0 +1,9 @@
+extends template
+block content
+    script(src="midi.js")
+    div(id="bigbox")
+        h1(id="boxtitle") #{title}
+        div(id="midi-control" class="flex")
+            input(class="round-input" id="midi-input" placeholder="Filename")
+            button(class="round-button" onclick="runmidi($('#midi-input').val(), 1);") Test MIDI on MPP
+            button(class="round-button" onclick="killall();") Kill all aplaymidi processes
