@@ -1,3 +1,8 @@
+const { exec, spawn } = require('child_process');
+
+global.exec = exec;
+global.spawn = spawn;
+global.http = require('http');
 global.cp = require("child_process");
 
 require('dotenv').config();
@@ -21,10 +26,10 @@ const UserDB = require('./userdb');
 bot.userdb = new UserDB();
 
 const MPPBot = require('./mppbot');
-mppbot = new MPPBot('wss://www.multiplayerpiano.com:443');
+mppbot = new MPPBot('wss://www.multiplayerpiano.com:443', bot);
 
 const DBot = require('./discordbot');
-const dbot = new DBot();
+const dbot = new DBot(bot);
 
 const Website = require('./website');
 const website = new Website();
@@ -35,6 +40,9 @@ const emoji = new Emoji('./emoji.json');
 const ObjectGenerator = require('./objectgenerator');
 const objectGenerator = new ObjectGenerator('./objects.json');
 
+const Minigames = require('./minigames');
+bot.minigames = new Minigames(bot);
+
 website.start();
 dbot.start();
 
@@ -43,34 +51,16 @@ dbot.start();
  */
 
 mppbot.connect("✧𝓡𝓟 𝓡𝓸𝓸𝓶✧");
-
-bot.addListener(mppbot.client.on('a', msg => {
-    msg.rank = bot.userdb.getRank(msg.p);
-    msg.args = msg.a.split(' ');
-    bot.prefixes.forEach(prefix => {
-        if (msg.args[0].startsWith(prefix)) {
-            msg.cmd = msg.args[0].split(prefix).slice(0, 2).join("").trim();
-            msg.argcat = msg.a.substring(msg.cmd.length + 1 + 2).trim();
-            let out = bot.runCommand(bot.findCommand(msg.cmd), msg);
-            if (typeof(out) === "undefined") return;
-            if (typeof(out) === typeof(undefined)) return;
-            mppbot.chat(out);
-        }
-    });
-}));
+mppbot.listen();
 
 /**
  * Readline listener
  */
 
-bot.addListener(rl.on('line', input => {
+rl.on('line', input => {
     msg = {
         a: input,
-        p: {
-            name: "Hri7566",
-            _id: "0",
-            color: "#FFFFFF"
-        },
+        p: mppbot.client.getOwnParticipant(),
         rank: {
             id: 4,
             name: "Owner"
@@ -87,40 +77,19 @@ bot.addListener(rl.on('line', input => {
             console.log(out);
         }
     });
-}));
+});
 
 /**
  * Discord listener
  */
 
-bot.addListener(dbot.client.on('message', msg => {
-    msg.a = msg.content;
-    msg.p = {
-        name: msg.author.username,
-        _id: msg.author.id,
-        color: msg.member.displayHexColor || "#000000"
-    };
-    msg.args = msg.a.split(' ');
-    msg.rank = bot.userdb.getRank(msg.p);
-    bot.prefixes.forEach(prefix => {
-        if (msg.args[0].startsWith(prefix)) {
-            msg.cmd = msg.args[0].split(prefix).slice(0, 2).join("").trim();
-            msg.argcat = msg.a.substring(msg.cmd.length + 1 + 2 + 2).trim();
-            let out = bot.runCommand(bot.findCommand(msg.cmd), msg);
-            if (typeof(out) === "undefined") return;
-            if (typeof(out) === typeof(undefined)) return;
-            dbot.chat(out);
-        }
-    });
-}));
-
-
+dbot.listen();
 
 /**
  * Website & Websocket listener
  */
 
-bot.addListener(website.callback = (msg) => {
+website.callback = (msg) => {
     msg.args = msg.a.split(' ');
     msg.rank = bot.userdb.getRank(msg.p);
     bot.prefixes.forEach(prefix => {
@@ -142,15 +111,42 @@ bot.addListener(website.callback = (msg) => {
             website.send(m);
         }
     });
-});
+};
 
 /**
  * Register extra commands
  */
 
 bot.commandRegistry.registerCommand("bonk", `Usage: PREFIXbonk <stuff>`, 1, msg => {
-    return `🔨 ${msg.p.name} bonked ${msg.argcat}!`;
+    let good = false;
+    let inv = bot.userdb.getInv(msg.p);
+    let playerToHit = bot.userdb.getUserByName(msg.argcat);
+    
+    inv.forEach(i => {
+        if (i.name == "hammer") {
+            good = true;
+        }
+    });
+
+    if (typeof(playerToHit) !== "undefined") {
+        return `🔨 ${msg.p.name} bonked ${playerToHit.name}!`;
+    } else {
+        if (good) {
+            return `🔨 ${msg.p.name} bonked ${msg.argcat}!`;
+        } else {
+            return `You need to buy a hammer!`;
+        }
+    }
 });
+
+bot.commandRegistry.registerCommand("setalias", `Usage: PREFIXsetalias <original id> <alias id>`, 2, msg => {
+    let p = bot.userdb.getUserById(msg.args[1]);
+    let p2 = bot.userdb.getUserById(msg.args[2]);
+    if (typeof(p) !== "undefined" && typeof(p2) !== "undefined") {
+        bot.userdb.makeUserAlias(p._id, p2._id);
+        return `${p._id} is now an alias of ${p2._id}.`;
+    }
+}, 2, false);
 
 bot.commandRegistry.registerCommand("8ball", `Usage: PREFIX8ball <polar question>`, 1, msg => {
     let answers = [
@@ -187,7 +183,7 @@ bot.commandRegistry.registerCommand(["randomemoji", "remoji"], `Usage: PREFIXran
     }
 });
 
-bot.commandRegistry.registerCommand("claim", `Usage: PREFIXclaim`, 0, msg => {
+bot.commandRegistry.registerCommand(["claim","daily"], `Usage: PREFIXclaim`, 0, msg => {
     return bot.userdb.claimDaily(msg.p)
 });
 
@@ -236,6 +232,10 @@ bot.commandRegistry.registerCommand(["shoplist","shop"], `Usage: PREFIXshoplist`
     return str;
 });
 
+bot.commandRegistry.registerCommand("eat", `Usage: PREFIXeat <food>`, 0, msg => {
+    return bot.userdb.eatItem(msg.p, msg.args[1]);
+});
+
 bot.commandRegistry.registerCommand(["randomobject", "robject", "robj"], `Usage: PREFIXrandomobject <multiple>`, 0, msg => {
     if (msg.args[1]) {
         return objectGenerator.getRandomObject(msg.args[1]);
@@ -247,6 +247,62 @@ bot.commandRegistry.registerCommand(["randomobject", "robject", "robj"], `Usage:
 bot.commandRegistry.registerCommand(["balance", "bal", "money"], `Usage: PREFIXmoney`, 0, msg => {
     return `${msg.p.name}, you have ${bot.userdb.getBalance(msg.p)}.`;
 });
+
+bot.commandRegistry.registerCommand(["gamble"], `Usage: PREFIXgamble <gamble amount>`, 1, msg => {
+    let arr = bot.minigames.getGameByName("gamble").run(msg);
+    let wonstring = "won";
+    if (arr.rand < 0) {
+        wonstring = "lost";
+        arr.rand = -arr.rand;
+    }
+    return `${msg.p.name} gambled ${bot.userdb.balanceFormat(arr.amount)} and ${wonstring} ${bot.userdb.balanceFormat(arr.rand)}. They now have ${bot.userdb.getBalance(msg.p)}.`;
+});
+
+bot.commandRegistry.registerCommand("play", `Usage: PREFIXplay <file>`, 1, msg => {
+    let options = {
+        hostname: 'localhost',
+        port: 35214,
+        path: `/?file=${msg.argcat}&port=1`,
+        method: "GET"
+    }
+
+    let req = http.request(options, res => {
+        res.on('data', d => {
+            console.log(d);
+        });
+    });
+
+    req.on('error', err => {
+        return err;
+    });
+
+    req.end();
+
+    return "";
+}, 3, true);
+
+bot.commandRegistry.registerCommand("stop", `Usage: PREFIXstop`, 0, msg => {
+    let options = {
+        hostname: 'localhost',
+        port: 35214,
+        path: `/?killall=true`,
+        method: "GET"
+    }
+
+    let req = http.request(options, res => {
+        res.on('data', d => {
+            console.log(d);
+        });
+    });
+
+    req.on('error', err => {
+        return err;
+    });
+
+    req.end();
+
+    return "";
+}, 3, true);
 
 /**
  * Start

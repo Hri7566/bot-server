@@ -4,37 +4,64 @@
             "name": "frog",
             "desc": "A frog.",
             "id": 0,
-            "price": 5
+            "price": 5,
+            "edible": false
         },
         {
             "name": "DJDanwich",
             "desc": "N/A",
             "id": 1,
-            "price": 10
+            "price": 10,
+            "edible": true
         },
         {
             "name": "Errorwich",
             "desc": "N/A",
             "id": 2,
-            "price": 10
+            "price": 10,
+            "edible": true
         },
         {
             "name": "Ludwigwich",
             "desc": "N/A",
             "id": 3,
-            "price": 10
+            "price": 10,
+            "edible": true
         },
         {
             "name": "Grantwich",
             "desc": "N/A",
             "id": 4,
-            "price": 10
+            "price": 10,
+            "edible": true
         },
         {
             "name": "lmofwich",
             "desc": "N/A",
             "id": 5,
-            "price": 10
+            "price": 10,
+            "edible": true
+        },
+        {
+            "name": "pork",
+            "desc": "Food.",
+            "id": 6,
+            "price": 20,
+            "edible": true
+        },
+        {
+            "name": "hammer",
+            "desc": "Buy this to use the bonk command.",
+            "id": 7,
+            "price": 50,
+            "edible": false
+        },
+        {
+            "name": "Clint_Yeastwood",
+            "desc": "Why not?",
+            "id": 8,
+            "price": 1000,
+            "edible": true
         }
     ]
 }

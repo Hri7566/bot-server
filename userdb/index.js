@@ -9,10 +9,10 @@ module.exports = class {
         this.users = require('./users.json');
         this.shop = require('./shop.json');
         this.defaultUser = new User('Anonymous', '2ad783be5f1bd100739f6b55', Date.now(), "#555555");
-        this.currencySymbol = "$";
+        this.currencySymbol = "H$";
         this.currencyStyle = "`${symbol}${amt}`";
         this.claimAmount = 50;
-        this.claimLength = 60 * 60 * 1000; //15 minutes in ms
+        this.claimLength = 24 * 60 * 60 * 1000; //15 minutes in ms
     }
 
     refresh() {
@@ -42,6 +42,9 @@ module.exports = class {
         }
         if (typeof(this.users[p._id].inventory) === 'undefined') {
             this.users[p._id].inventory = [];
+        }
+        if (this.users[p._id].name !== p.name) {
+            this.users[p._id].name = p.name;
         }
         return this.users[p._id];
     }
@@ -74,6 +77,18 @@ module.exports = class {
 
     getUserById(id) {
         return this.users[id];
+    }
+
+    getUserByName(name) {
+        let userToReturn;
+        Object.keys(this.users).forEach(id => {
+            let user = this.users[id];
+            if (!user.name) return;
+            if (user.name.toLowerCase().includes(name.toLowerCase())) {
+                userToReturn = user;
+            }
+        });
+        return userToReturn;
     }
 
     getRank(p) {
@@ -115,7 +130,7 @@ module.exports = class {
             this.save();
             return `${p.name} claimed ${this.balanceFormat(claimAmount)}. They now have ${this.balanceFormat(user.balance)}.`;
         } else {
-            return `You can't claim until ${Math.round(timeleft/1000/60)} minutes from now.`;
+            return `You can't claim until ${Math.round(timeleft/1000/60/60)} hours from now.`;
         }
     }
 
@@ -129,7 +144,7 @@ module.exports = class {
 
         if (typeof(item) === "undefined") return "No such item";
 
-        if (typeof(count) === "undefined") count = 1;
+        if (!count || count < 1) count = 1;
 
         if (user.balance >= item.price * count) {
             let res = false;
@@ -137,7 +152,8 @@ module.exports = class {
             let invitem = {
                 name: item.name,
                 count: count,
-                sellprice: item.price
+                sellprice: item.price,
+                edible: item.edible
             }
             user.inventory.forEach(obj => {
                 if (!res) {
@@ -164,7 +180,7 @@ module.exports = class {
 
         if (typeof(item) === "undefined") return "No such item";
 
-        if (typeof(count) === "undefined") count = 1;
+        if (!count || count < 1) count = 1;
 
         if (item.count >= count) {
             user.balance += item.sellprice * count;
@@ -174,6 +190,20 @@ module.exports = class {
             return `${p.name} sold ${item.name} (x${count}) for ${this.balanceFormat(item.sellprice * count)}.`;
         } else {
             return `You only have ${item.count} of ${item.name}.`;
+        }
+    }
+
+    eatItem(p, i) {
+        let user = this.getUser(p);
+        let item = this.findInvItem(p, i);
+
+        if (typeof(item) === "undefined") return "Couldn't find the item in your inventory.";
+        if (item.edible) {
+            item.count -= 1;
+            this.invClearEmpty(p);
+            return `${p.name} ate ${item.name}.`;
+        } else {
+            return "This item isn't edible.";
         }
     }
 
@@ -189,7 +219,6 @@ module.exports = class {
         if (found == true) {
             return iret;
         }
-        save();
     }
 
     getShopList() {

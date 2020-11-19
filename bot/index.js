@@ -10,7 +10,11 @@ module.exports = class {
     }
 
     start() {
-        console.log("Bot: Ready for use");
+        this.log("Ready for use");
+    }
+
+    log(str) {
+        console.log(`Bot: ${str}`);
     }
 
     addListener(func) {
