@@ -12,7 +12,7 @@ module.exports = class {
         this.currencySymbol = "H$";
         this.currencyStyle = "`${symbol}${amt}`";
         this.claimAmount = 50;
-        this.claimLength = 24 * 60 * 60 * 1000; //15 minutes in ms
+        this.claimLength = 24 * 60 * 60 * 1000; //24 hours in ms
     }
 
     refresh() {
@@ -20,8 +20,19 @@ module.exports = class {
         this.shop = require('./shop.json');
     }
 
+    resetNaNBalances() {
+        for (let id in Object.keys(this.users)) {
+            let p = this.users[id];
+            if (typeof(p) == "undefined") return;
+            if (typeof(p.balance) == "undefined" || p.balance == null) {
+                p.balance = 100;
+            }
+        };
+        this.save();
+    }
+
     save() {
-        fs.writeFile(__dirname+'/users.json', JSON.stringify(this.users), (err) => {if (err) {console.error(err)}});
+        fs.writeFile(__dirname+'/users.json', JSON.stringify(this.users, null, 4), (err) => {if (err) {console.error(err)}});
     }
 
     createUser(p, rank) {

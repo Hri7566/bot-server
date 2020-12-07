@@ -19,6 +19,8 @@ module.exports = class {
             return {name: "Mod", id: 1};
         } else if (inc("ban")) {
             return {name: "Banned", id: -1};
+        } else if (inc("user")) {
+            return {name: "User", id: 0};
         } else {
             return {name: "User", id: 0};
         }

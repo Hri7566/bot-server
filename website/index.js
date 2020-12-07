@@ -19,13 +19,13 @@ module.exports = class {
         };
         this.clients = [];
         this.alg = 'aes-256-ctr';
-        this.secretKey = "vOVH6sdmpNWjRRIqCc8rdxs01lwHzfr3";
+        this.secretKey = "motherfucker";
         this.midi = "/midi";
     }
 
     start() {
         this.iv = Crypto.randomBytes(16);
-        this.server = https.createServer(this.options, this.app).listen(process.env.PORT);
+        this.server = https.createServer(this.options, this.app).listen(8080);
         this.ws = new WebSocket.Server({server:this.server});
         this.app.set('view engine', "pug");
         this.app.use(Express.static('public'));

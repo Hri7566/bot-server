@@ -14,6 +14,10 @@ const CommandRegistry = class {
         this.bot.cmds.push(new this.bot.Command(cmd, usage, minargs, func, minrank || 0, hidden || false));
     }
 
+    registerCommandObj(obj) {
+        this.bot.cmds.push(obj);
+    }
+
     tempReg(callback, cmd, usage, minargs, func, minrank, hidden) {
         this.bot.cmds.push(new this.bot.Command(cmd, usage, minargs, func, minrank || 0, hidden || false));
         callback(cmd, usage, minargs, func, minrank, hidden);
@@ -22,14 +26,15 @@ const CommandRegistry = class {
 
     registerDefaultCommands(bot) {
         this.registerCommand(["help", "h"], `Usage: PREFIXhelp <command>`, 0, msg => {
+            let usedPrefix = msg.args[0].split(msg.cmd)[0];
             if (msg.args[1]) {
-                return bot.getUsage(bot.findCommand(msg.argcat));
+                return bot.getUsage(bot.findCommand(msg.args[1]), usedPrefix);
             }
             let tosend = "Commands: ";
             bot.cmds.forEach(cmd => {
                 if (!cmd.hidden) {
                     if (msg.rank.id >= cmd.minrank) {
-                        tosend += bot.prefixes[0] + cmd.cmd[0] + " | ";
+                        tosend += usedPrefix + cmd.cmd[0] + " | ";
                     }
                 }
             });

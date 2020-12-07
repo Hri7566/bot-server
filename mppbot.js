@@ -1,16 +1,18 @@
 const Client = require("mpp-client-xt");
 
 module.exports = class {
-    constructor (ws, bot) {
+    constructor (ws, bot, name) {
+        name ? this.name = name : this.name = "MPP";
         this.client = new Client(ws);
         this.client.on('error', event => {
-            console.error("MPP Client Error: ", event);
+            this.log(this.name + " Client Error: " + event, true);
             setTimeout(() => {
+                this.log("Attempting to reconnect...");
                 this.client.start();
             }, 10000);
         });
         this.client.on('hi', () => {
-            console.log("MPP: Connected");
+            this.log("Connected");
         });
         this.bot = bot;
     }
@@ -24,6 +26,11 @@ module.exports = class {
     
     chat(string) {
         this.client.sendArray([{m:'a', message:`\u034f${string}`.split("amightywind").join(`amighty\u034fwind`)}]);
+    }
+
+    log(string, err) {
+        let str = `${this.name}: ${string}`
+        err ? console.error(str) : console.log(str);
     }
 
     listen() {

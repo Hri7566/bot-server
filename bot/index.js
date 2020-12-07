@@ -24,24 +24,44 @@ module.exports = class {
     runCommand(cmd, msg) {
         if (typeof(msg) === "undefined") return;
         if (typeof(cmd) === "undefined") return;
+        let usedPrefix = "";
+        try {
+            usedPrefix = msg.args[0].split(msg.cmd)[0];
+        } catch (err) {
+            if (err) {
+                usedPrefix = this.prefixes[0];
+            }
+        }
         if (msg.rank.id < cmd.minrank) return;
-        if (msg.args.length - 1 < cmd.minargs) return this.getUsage(cmd);
-        let ex = cmd.func(msg);
-        if (ex.length > 0 && typeof(ex) !== "undefined") return ex;
+        if (msg.args.length - 1 < cmd.minargs) return this.getUsage(cmd, usedPrefix);
+        let isAsync = cmd.func.constructor.name == "AsyncFunction";
+        if (isAsync) {
+            cmd.func(msg, this).then((t) => {
+                return t;
+            }, (reason) => {
+                return reason;
+            });
+        } else {
+            let ex = cmd.func(msg, this);
+            if (typeof(ex) !== "undefined") {
+                if (ex.length > 0) return ex;
+            }
+        }
     }
 
-    getUsage(cmd) {
+    getUsage(cmd, usedPrefix) {
+        if (typeof(usedPrefix) === "undefined") usedPrefix = this.prefixes[0];
         if (typeof(cmd) === "undefined") {
             return `There is no help for that.`;
         }
         switch (typeof(cmd.cmd)) {
             case "string":
                 if (typeof(cmd.usage) === "undefined" || cmd.usage == null) return `There is no help for ${cmd.cmd}.`;
-                return cmd.usage.replace("PREFIX", this.prefixes[0]);
+                return cmd.usage.replace("PREFIX", usedPrefix);
                 break;
             case "object":
                 if (typeof(cmd.usage) === "undefined" || cmd.usage == null) return `There is no help for ${cmd.cmd[0]}.`;
-                return cmd.usage.replace("PREFIX", this.prefixes[0]);
+                return cmd.usage.replace("PREFIX", usedPrefix);
                 break;
         }
     }
