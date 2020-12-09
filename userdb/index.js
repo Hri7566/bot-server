@@ -60,6 +60,19 @@ module.exports = class {
         return this.users[p._id];
     }
 
+    findUser(s) {
+        let userToReturn;
+        Object.keys(this.users).forEach(id => {
+            let user = this.users[id];
+            if (!user.name) return;
+            if (!user._id) return;
+            if (user.name.toLowerCase().includes(s.toLowerCase()) || user._id.toLowerCase().includes(s.toLowerCase())) {
+                userToReturn = user;
+            }
+        });
+        return userToReturn;
+    }
+
     getAlias(id) {
         return this.users[this.users[id].alias];
     }

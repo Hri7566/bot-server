@@ -21,7 +21,7 @@ module.exports = class {
         this.listeners.push(new this.Listener(this, func));
     }
 
-    runCommand(cmd, msg) {
+    async runCommand(cmd, msg) {
         if (typeof(msg) === "undefined") return;
         if (typeof(cmd) === "undefined") return;
         let usedPrefix = "";
@@ -42,7 +42,7 @@ module.exports = class {
                 return reason;
             });
         } else {
-            let ex = cmd.func(msg, this);
+            let ex = await cmd.func(msg, this);
             if (typeof(ex) !== "undefined") {
                 if (ex.length > 0) return ex;
             }

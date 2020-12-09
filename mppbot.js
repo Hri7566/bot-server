@@ -1,9 +1,9 @@
 const Client = require("mpp-client-xt");
 
 module.exports = class {
-    constructor (ws, bot, name) {
+    constructor (ws, bot, name, proxy) {
         name ? this.name = name : this.name = "MPP";
-        this.client = new Client(ws);
+        this.client = new Client(ws, proxy);
         this.client.on('error', event => {
             this.log(this.name + " Client Error: " + event, true);
             setTimeout(() => {
@@ -34,14 +34,14 @@ module.exports = class {
     }
 
     listen() {
-        this.client.on('a', msg => {
+        this.client.on('a', async msg => {
             msg.rank = this.bot.userdb.getRank(msg.p);
             msg.args = msg.a.split(' ');
-            this.bot.prefixes.forEach(prefix => {
+            this.bot.prefixes.forEach(async prefix => {
                 if (msg.args[0].startsWith(prefix)) {
                     msg.cmd = msg.args[0].split(prefix).slice(0, 2).join("").trim();
                     msg.argcat = msg.a.substring(msg.cmd.length + 1 + 2).trim();
-                    let out = this.bot.runCommand(this.bot.findCommand(msg.cmd), msg);
+                    let out = await this.bot.runCommand(this.bot.findCommand(msg.cmd), msg);
                     if (typeof(out) === "undefined") return;
                     if (typeof(out) === typeof(undefined)) return;
                     this.chat(out);

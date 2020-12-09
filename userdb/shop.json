@@ -8,6 +8,13 @@
             "edible": false
         },
         {
+            "name": "hotdog",
+            "desc": "Getchur hot dawg",
+            "id": 9,
+            "price": 5,
+            "edible": true
+        },
+        {
             "name": "DJDanwich",
             "desc": "N/A",
             "id": 1,
@@ -37,6 +44,27 @@
         },
         {
             "name": "lmofwich",
+            "desc": "N/A",
+            "id": 4,
+            "price": 10,
+            "edible": true
+        },
+        {
+            "name": "Fishiwich",
+            "desc": "N/A",
+            "id": 4,
+            "price": 10,
+            "edible": true
+        },
+        {
+            "name": "Blobekburger",
+            "desc": "N/A",
+            "id": 5,
+            "price": 10,
+            "edible": true
+        },
+        {
+            "name": "Danburger",
             "desc": "N/A",
             "id": 5,
             "price": 10,

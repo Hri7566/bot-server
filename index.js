@@ -37,8 +37,8 @@ bot.ranks = new Ranks();
 const UserDB = require('./userdb');
 bot.userdb = new UserDB();
 
-const MPPBot = require('./mppbot');
-mppbot = new MPPBot('wss://www.multiplayerpiano.com:443', bot);
+global.MPPBot = require('./mppbot');
+mppbot = new MPPBot("wss://www.multiplayerpiano.com:443", bot, "RP Room");
 hmppbot = new MPPBot('wss://hri7566.info:2050', bot, "HMPP");
 
 const DBot = require('./discordbot');

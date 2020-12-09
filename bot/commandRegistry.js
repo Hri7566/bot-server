@@ -43,7 +43,12 @@ const CommandRegistry = class {
         });
     
         this.registerCommand("id", `Usage: PREFIXid`, 0, msg => {
-            return `Your ID: ${msg.p._id} | Your color: ${bot.Color.getNearestColor(msg.p.color)} [${msg.p.color}]`;
+            if (msg.args[1]) {
+                let user = bot.userdb.findUser(msg.argcat);
+                return `${user.name}'s ID: ${user._id} | ${user.name}'s color: ${bot.Color.getNearestColor(user.color)} [${user.color}]`;
+            } else {
+                return `Your ID: ${msg.p._id} | Your color: ${bot.Color.getNearestColor(msg.p.color)} [${msg.p.color}]`;
+            }
         });
     
         this.registerCommand("rank", `Usage: PREFIXrank`, 0, msg => {
