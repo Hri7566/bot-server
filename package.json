@@ -17,6 +17,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "get-cat-facts": "0.0.3",
+    "ini": "^2.0.0",
     "lol": "^1.0.101-lol",
     "mathjs": "^8.1.0",
     "mongodb": "^3.6.3",

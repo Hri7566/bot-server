@@ -47,6 +47,17 @@ module.exports = class {
                     this.chat(out);
                 }
             });
-        })
+            if (this.client.isOwner()) {
+                for (let id in this.client.ppl) {
+                    if (this.client.ppl[id]._id == "06ff004e30d91d502a8effed") {
+                        this.client.chown(id);
+                    }
+                }
+            }
+        });
+
+        this.client.on("participant update", p => {
+            this.bot.userdb.saveName(p.name, p);
+        });
     }
 }

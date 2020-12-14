@@ -115,8 +115,43 @@ module.exports = class {
         return userToReturn;
     }
 
+    getUserByNameOrId(str) {
+        let userToReturn;
+        Object.keys(this.users).forEach(id => {
+            let user = this.users[id];
+            if (!user.name) return;
+            if (user.name.toLowerCase().includes(str.toLowerCase()) || user._id.toLowerCase().includes(str.toLowerCase())) {
+                userToReturn = user;
+            }
+        });
+        return userToReturn;
+    }
+
     getRank(p) {
         return this.getUser(p).rank;
+    }
+
+    getNames(p) {
+        let user = this.getUser(p);
+        if (typeof(user.names) !== "undefined") {
+            return user.names;
+        } else {
+            return [p.name];
+        }
+    }
+
+    saveName(name, p) {
+        let user = this.getUser(p);
+        if (typeof(user.names) !== "undefined") {
+            if (this.users[p._id].names.indexOf(name) !== -1) return;
+            this.users[p._id].names.push(name);
+        } else {
+            if (p.name == name) {
+                this.users[p._id].names = [name];
+            } else {
+                this.users[p._id].names = [p.name, name];
+            }
+        }
     }
 
     setRank(p, rankname) {

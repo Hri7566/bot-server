@@ -18,7 +18,7 @@ module.exports = class {
     }
 
     listen() {
-        this.client.on('message', msg => {
+        this.client.on('message', async msg => {
             msg.a = msg.content;
             msg.p = {
                 name: msg.author.username,
@@ -32,11 +32,11 @@ module.exports = class {
             }
             msg.args = msg.a.split(' ');
             msg.rank = this.bot.userdb.getRank(msg.p);
-            this.bot.prefixes.forEach(prefix => {
+            this.bot.prefixes.forEach(async prefix => {
                 if (msg.args[0].startsWith(prefix)) {
                     msg.cmd = msg.args[0].split(prefix).slice(0, 2).join("").trim();
                     msg.argcat = msg.a.substring(msg.cmd.length + prefix.length).trim();
-                    let out = this.bot.runCommand(this.bot.findCommand(msg.cmd), msg);
+                    let out = await this.bot.runCommand(this.bot.findCommand(msg.cmd), msg);
                     if (typeof(out) === "undefined") return;
                     if (typeof(out) === typeof(undefined)) return;
                     this.chat(out);
