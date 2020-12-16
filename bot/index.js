@@ -32,20 +32,23 @@ module.exports = class {
                 usedPrefix = this.prefixes[0];
             }
         }
-        if (msg.rank.id < cmd.minrank) return;
-        if (msg.args.length - 1 < cmd.minargs) return this.getUsage(cmd, usedPrefix);
-        let isAsync = cmd.func.constructor.name == "AsyncFunction";
-        if (isAsync) {
-            cmd.func(msg, this).then((t) => {
-                return t;
-            }, (reason) => {
-                return reason;
-            });
-        } else {
-            let ex = await cmd.func(msg, this);
-            if (typeof(ex) !== "undefined") {
-                if (ex.length > 0) return ex;
+        if (msg.rank.id >= cmd.minrank) {
+            if (msg.args.length - 1 < cmd.minargs) return this.getUsage(cmd, usedPrefix);
+            let isAsync = cmd.func.constructor.name == "AsyncFunction";
+            if (isAsync) {
+                cmd.func(msg, this).then((t) => {
+                    return t;
+                }, (reason) => {
+                    return reason;
+                });
+            } else {
+                let ex = await cmd.func(msg, this);
+                if (typeof(ex) !== "undefined") {
+                    if (ex.length > 0) return ex;
+                }
             }
+        } else {
+            return `You can't use this.`;
         }
     }
 
