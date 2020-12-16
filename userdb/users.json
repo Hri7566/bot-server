@@ -77889,6 +77889,7 @@
     },
     "5cc8bcff236e3400729265e6": {
         "name": "i like ya cut 𝓮 𝓫𝓸𝓲",
+        "alias": "41fab0e234ec500b2b46c794",
         "_id": "5cc8bcff236e3400729265e6",
         "firstTime": 1607961108720,
         "color": "#0fcf09",
@@ -85702,7 +85703,7 @@
         "inventory": []
     },
     "eb4a3fd5b6be4df046a33744": {
-        "name": "№№№№ настя хранитель №№№№",
+        "name": "вера дух",
         "_id": "eb4a3fd5b6be4df046a33744",
         "firstTime": 1608124886680,
         "color": "#4037d4",
@@ -85738,6 +85739,32 @@
         "_id": "bfe04314aaab6b9410ad26e6",
         "firstTime": 1608124998191,
         "color": "#63fbff",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": []
+    },
+    "ede650e0bca67add9ca75831": {
+        "name": "Anonymous",
+        "_id": "ede650e0bca67add9ca75831",
+        "firstTime": 1608125849715,
+        "color": "#850f35",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": []
+    },
+    "3dceaa466645de1051e49ead": {
+        "name": "🎄❄⛄▲ 𝑀𝑒𝓇🤡𝓅𝑒 𝓀𝑒𝓀𝓈𝑒 ▲⛄❄🎄",
+        "_id": "3dceaa466645de1051e49ead",
+        "firstTime": 1608125988176,
+        "color": "#a34a42",
         "rank": {
             "name": "User",
             "id": 0
