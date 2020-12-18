@@ -97,7 +97,7 @@ rl.on('line', input => {
         }
     };
     msg.args = msg.a.split(' ');
-    bot.prefixes.forEach(prefix => {
+    bot.prefixes.forEach(async prefix => {
         if (msg.args[0].startsWith(prefix)) {
             msg.cmd = msg.args[0].split(prefix).slice(0, 2).join("").trim();
             msg.argcat = msg.a.substring(msg.cmd.length + 1 + 2).trim();

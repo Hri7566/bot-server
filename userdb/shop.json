@@ -90,6 +90,14 @@
             "id": 8,
             "price": 1000,
             "edible": true
+        },
+        {
+            "name": "Baseball bat",
+            "desc": "Beat something.",
+            "id": 10,
+            "price": 20,
+            "edible": false,
+            "weapon": true
         }
     ]
 }

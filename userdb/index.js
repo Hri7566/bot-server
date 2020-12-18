@@ -3,6 +3,7 @@ const fs = require('fs');
 const User = require('./User');
 const Rank = require('./Rank');
 const { userInfo } = require('os');
+// const pg = require('pg');
 
 module.exports = class {
     constructor () {
@@ -13,7 +14,12 @@ module.exports = class {
         this.currencyStyle = "`${symbol}${amt}`";
         this.claimAmount = 50;
         this.claimLength = 24 * 60 * 60 * 1000; //24 hours in ms
+        // this.psqlSetup();
     }
+
+    // psqlSetup() {
+    //     this.pgclient = new pg.Client();
+    // }
 
     refresh() {
         this.users = require('./users.json');
@@ -32,7 +38,10 @@ module.exports = class {
     }
 
     save() {
-        fs.writeFile(__dirname+'/users.json', JSON.stringify(this.users, null, 4), (err) => {if (err) {console.error(err)}});
+        let data = JSON.stringify(this.users, null, 4);
+        if (typeof(data) !== "undefined" && data !== null) {
+            fs.writeFile(__dirname+'/users.json', data, (err) => {if (err) {console.error(err)}});
+        }
     }
 
     createUser(p, rank) {
@@ -152,6 +161,7 @@ module.exports = class {
                 this.users[p._id].names = [p.name, name];
             }
         }
+        this.save();
     }
 
     setRank(p, rankname) {
