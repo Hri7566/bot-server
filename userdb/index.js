@@ -38,9 +38,16 @@ module.exports = class {
     }
 
     save() {
-        let data = JSON.stringify(this.users, null, 4);
-        if (typeof(data) !== "undefined" && data !== null) {
-            fs.writeFile(__dirname+'/users.json', data, (err) => {if (err) {console.error(err)}});
+        try {
+            let data = JSON.stringify(this.users, null, 4);
+            if (typeof(data) !== "undefined" && data !== null) {
+                fs.writeFile(__dirname+'/users.json', data, (err) => {if (err) {console.error(err)}});
+                this.users = require('./users.json');
+            }
+        } catch (err) {
+            if (err) {
+                console.error(`User DB couldn't be saved: `+err);
+            }
         }
     }
 

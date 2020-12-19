@@ -92,10 +92,18 @@
             "edible": true
         },
         {
-            "name": "Baseball bat",
+            "name": "bat",
             "desc": "Beat something.",
             "id": 10,
             "price": 20,
+            "edible": false,
+            "weapon": true
+        },
+        {
+            "name": "nwordpass",
+            "desc": "You can't say the N-word without it.",
+            "id": 11,
+            "price": 100,
             "edible": false,
             "weapon": true
         }

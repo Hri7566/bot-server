@@ -44,7 +44,7 @@
             "name": "Owner",
             "id": 4
         },
-        "balance": 452,
+        "balance": 332,
         "claimTime": 1608295407526,
         "inventory": [
             {
@@ -58,6 +58,18 @@
                 "count": 1,
                 "sellprice": 5,
                 "edible": true
+            },
+            {
+                "name": "bat",
+                "count": 1,
+                "sellprice": 20,
+                "edible": false
+            },
+            {
+                "name": "nwordpass",
+                "count": 1,
+                "sellprice": 100,
+                "edible": false
             }
         ]
     },
@@ -14705,7 +14717,10 @@
         },
         "balance": 100,
         "claimTime": 0,
-        "inventory": []
+        "inventory": [],
+        "names": [
+            "🦉❌sans"
+        ]
     },
     "813d55051e4b694f08b12552": {
         "name": "Anonymous",
@@ -16428,7 +16443,7 @@
         "inventory": []
     },
     "394d73779ba72922f3982a2a": {
-        "name": "♚♥𝓢𝓪𝓷𝓼 𝓽𝓱𝓮 𝓢𝓴𝓮𝓵𝓮𝓽𝓸𝓷| 28♥♚",
+        "name": "♚♥𝓒𝓾𝓹𝓱𝓮𝓪𝓭♥♚",
         "_id": "394d73779ba72922f3982a2a",
         "firstTime": 1605605729965,
         "color": "#6b8a1a",
@@ -16440,7 +16455,8 @@
         "claimTime": 0,
         "inventory": [],
         "names": [
-            "♚♥𝓢𝓪𝓷𝓼 𝓽𝓱𝓮 𝓢𝓴𝓮𝓵𝓮𝓽𝓸𝓷| 28♥♚"
+            "♚♥𝓢𝓪𝓷𝓼 𝓽𝓱𝓮 𝓢𝓴𝓮𝓵𝓮𝓽𝓸𝓷| 28♥♚",
+            "♚♥𝓒𝓾𝓹𝓱𝓮𝓪𝓭♥♚"
         ]
     },
     "26db69f937dff76e709d2d57": {
@@ -61892,7 +61908,10 @@
         },
         "balance": 0,
         "claimTime": 0,
-        "inventory": []
+        "inventory": [],
+        "names": [
+            "deeveedee [dvd!stats]"
+        ]
     },
     "bf4eb25661f392789d64d96e": {
         "name": "꧁ঔৣ༺ 唯一無⚠️⚠二GrantAndCream+Skyeラ⚠ット ༻️ঔৣ꧂",
@@ -63173,7 +63192,7 @@
         "inventory": []
     },
     "d00c5e754142588e9f7d007b": {
-        "name": "🆕 Qhy 「 qhy!help 」",
+        "name": "Anonymous",
         "_id": "d00c5e754142588e9f7d007b",
         "firstTime": 1607668840135,
         "color": "#740ccb",
@@ -63185,7 +63204,8 @@
         "claimTime": 0,
         "inventory": [],
         "names": [
-            "🆕 Qhy 「 qhy!help 」"
+            "🆕 Qhy 「 qhy!help 」",
+            "Anonymous"
         ]
     },
     "0e28b1e1972a5730355a5290": {
@@ -65916,7 +65936,7 @@
         "inventory": []
     },
     "bbd1c64fe7440c2758546554": {
-        "name": "Lizzy👽🍄☮️",
+        "name": "Anonymous",
         "_id": "bbd1c64fe7440c2758546554",
         "firstTime": 1607762123744,
         "color": "#b8881b",
@@ -65928,7 +65948,8 @@
         "claimTime": 0,
         "inventory": [],
         "names": [
-            "Lizzy👽🍄☮️"
+            "Lizzy👽🍄☮️",
+            "Anonymous"
         ]
     },
     "6c72de02b9d4ff4c8eb02570": {
@@ -69915,7 +69936,7 @@
         ]
     },
     "e967ac79a6b8f950949775fd": {
-        "name": "stormy",
+        "name": "DJ",
         "_id": "e967ac79a6b8f950949775fd",
         "firstTime": 1607820924560,
         "color": "#02b9cc",
@@ -69929,7 +69950,8 @@
         "names": [
             "Anonymous",
             "hello",
-            "stormy"
+            "stormy",
+            "DJ"
         ]
     },
     "18666a2dfe3f27d11dfa7797": {
@@ -72322,7 +72344,7 @@
         ]
     },
     "a8bd2a42fb73f3e80dbde321": {
-        "name": "🦉🍩✨☪𝒞𝓾𝓽𝓲𝓮𝒞𝓸𝓸𝓴𝓲𝓮( ͡• ͜ʖ ͡• )",
+        "name": "🦉🍩✨☪𝒞𝓾𝓽𝓲𝓮𝒞𝓸𝓸𝓴𝓲𝓮⛄ ͡• ͜ʖ ͡•",
         "_id": "a8bd2a42fb73f3e80dbde321",
         "firstTime": 1607854271399,
         "color": "#daaf88",
@@ -72350,7 +72372,8 @@
             "🦉🍩✨♥꧁♥𝒞𝓾𝓽𝓲𝓮𝒞𝓸𝓸𝓴𝓲𝓮♥꧂♥✨🍩🦉",
             "🦉🍩✨♥☪♥𝒞𝓾𝓽𝓲𝓮𝒞𝓸𝓸𝓴𝓲𝓮♥☪♥✨🍩🦉",
             "🦉🍩✨☪𝒞𝓾𝓽𝓲𝓮𝒞𝓸𝓸𝓴𝓲𝓮☪✨🍩🦉c!help",
-            "🦉🍩✨☪𝒞𝓾𝓽𝓲𝓮𝒞𝓸𝓸𝓴𝓲𝓮( ͡• ͜ʖ ͡• )"
+            "🦉🍩✨☪𝒞𝓾𝓽𝓲𝓮𝒞𝓸𝓸𝓴𝓲𝓮( ͡• ͜ʖ ͡• )",
+            "🦉🍩✨☪𝒞𝓾𝓽𝓲𝓮𝒞𝓸𝓸𝓴𝓲𝓮⛄ ͡• ͜ʖ ͡•"
         ]
     },
     "af3eefe2b58e86dfcacdf438": {
@@ -79468,8 +79491,8 @@
             "name": "User",
             "id": 0
         },
-        "balance": 50,
-        "claimTime": 1608065637204,
+        "balance": 100,
+        "claimTime": 1608364069940,
         "inventory": [],
         "names": [
             "Anonymous"
@@ -87664,7 +87687,7 @@
         ]
     },
     "2cfd10a808f0171c419e8e9a": {
-        "name": "fgtg",
+        "name": "андрей",
         "_id": "2cfd10a808f0171c419e8e9a",
         "firstTime": 1608145709859,
         "color": "#912ba7",
@@ -93030,7 +93053,7 @@
         ]
     },
     "445ea3e4416962843c08def5": {
-        "name": "Anonymous",
+        "name": "Lollipop",
         "_id": "445ea3e4416962843c08def5",
         "firstTime": 1608308398268,
         "color": "#3378f7",
@@ -93042,7 +93065,8 @@
         "claimTime": 0,
         "inventory": [],
         "names": [
-            "Anonymous"
+            "Anonymous",
+            "Lollipop"
         ]
     },
     "e4e2e1e80c3887623d8b54dc": {
@@ -94788,7 +94812,8 @@
         "claimTime": 0,
         "inventory": [],
         "names": [
-            "Qhy 「 🎄 」 「 qhy!help 」"
+            "Qhy 「 🎄 」 「 qhy!help 」",
+            "⚽ 「 qhy!help 」"
         ]
     },
     "d60bf45ee4dc477b52bb9fca": {
@@ -95133,7 +95158,7 @@
         ]
     },
     "41b6b4eddaaf29cce730bc47": {
-        "name": "No Nut November (.help)",
+        "name": "pee",
         "_id": "41b6b4eddaaf29cce730bc47",
         "firstTime": 1608352293595,
         "color": "#776c55",
@@ -95145,11 +95170,12 @@
         "claimTime": 0,
         "inventory": [],
         "names": [
-            "No Nut November (.help)"
+            "No Nut November (.help)",
+            "pee"
         ]
     },
     "78a2f48d539260c5fa2fc6b5": {
-        "name": "Wolfy",
+        "name": "ArmedCustard",
         "_id": "78a2f48d539260c5fa2fc6b5",
         "firstTime": 1608352858820,
         "color": "#7f7762",
@@ -95161,7 +95187,477 @@
         "claimTime": 0,
         "inventory": [],
         "names": [
+            "Wolfy",
+            "ArmedCustard"
+        ]
+    },
+    "66472e22a25953032484c25f": {
+        "name": "Wolfy",
+        "_id": "66472e22a25953032484c25f",
+        "firstTime": 1608353418386,
+        "color": "#ac0a8f",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
             "Wolfy"
+        ]
+    },
+    "7c1e514b2bc24e02ef2114aa": {
+        "name": "deeveedee [dvd!stats]",
+        "_id": "7c1e514b2bc24e02ef2114aa",
+        "firstTime": 1608354023721,
+        "color": "#09eb4e",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Big Ban | Searching...",
+            "deeveedee [dvd!stats]"
+        ]
+    },
+    "d8133b4238550d68e93a93e8": {
+        "name": "Noob",
+        "_id": "d8133b4238550d68e93a93e8",
+        "firstTime": 1608355121874,
+        "color": "#000000",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": []
+    },
+    "2f202b66b04eab969bdb2d5e": {
+        "name": "XxINOTDRAKE346JAYE1902923415xX",
+        "_id": "2f202b66b04eab969bdb2d5e",
+        "firstTime": 1608355626650,
+        "color": "#71cddc",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "XxINOTDRAKE346JAYE1902923415xX"
+        ]
+    },
+    "d8da4dd21080e9e9388151ca": {
+        "name": "Joker (actually a pedophile)",
+        "_id": "d8da4dd21080e9e9388151ca",
+        "firstTime": 1608355730926,
+        "color": "#8afc68",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Joker (actually a pedophile)"
+        ]
+    },
+    "c808614dc3ec4bf102930e6d": {
+        "name": "Batman (Actually Jokers Lover)",
+        "_id": "c808614dc3ec4bf102930e6d",
+        "firstTime": 1608355763374,
+        "color": "#dc97c3",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Batman (Actually Jokers Lover)"
+        ]
+    },
+    "bb46df003ab272d8977337d9": {
+        "name": "Anonyymous",
+        "_id": "bb46df003ab272d8977337d9",
+        "firstTime": 1608355786804,
+        "color": "#91f843",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "a p o l l e n a v",
+            "e p o l l e n a v",
+            "Anonyymous"
+        ]
+    },
+    "5d7af8fa000788bc2fe88051": {
+        "name": "Noob",
+        "_id": "5d7af8fa000788bc2fe88051",
+        "firstTime": 1608355831349,
+        "color": "#000000",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "alias": "ead940199c7d9717e5149919"
+    },
+    "75631685ce2135928bc276ae": {
+        "name": "кронобро",
+        "_id": "75631685ce2135928bc276ae",
+        "firstTime": 1608355881295,
+        "color": "#d73a38",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "кронобро"
+        ]
+    },
+    "e3fbe740b79d6622a6bdaf52": {
+        "name": "deeveedee [dvd!stats]",
+        "_id": "e3fbe740b79d6622a6bdaf52",
+        "firstTime": 1608356154985,
+        "color": "#0cc0a9",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous",
+            "deeveedee [dvd!stats]"
+        ]
+    },
+    "f76da6452e6dd5ef20c5d8f7": {
+        "name": "Noob",
+        "_id": "f76da6452e6dd5ef20c5d8f7",
+        "firstTime": 1608357051437,
+        "color": "#000000",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": []
+    },
+    "61b0ff9d55c9ae93c7bd9853": {
+        "name": "Tohru-Sama",
+        "_id": "61b0ff9d55c9ae93c7bd9853",
+        "firstTime": 1608357667198,
+        "color": "#d8be32",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Tohru-Sama"
+        ]
+    },
+    "0A8CC344619BDBCE77B8": {
+        "name": "Noob",
+        "_id": "0A8CC344619BDBCE77B8",
+        "firstTime": 1608357934551,
+        "color": "#FFAE75",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Noob"
+        ]
+    },
+    "96fa67808fc5b6266acc6421": {
+        "name": "deeveedee [dvd!stats]",
+        "_id": "96fa67808fc5b6266acc6421",
+        "firstTime": 1608358229638,
+        "color": "#5e868d",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Phoenix's DataBot (Prox-5 | !help)",
+            "deeveedee [dvd!stats]"
+        ]
+    },
+    "f1e0ca977aa8747e39e1cb23": {
+        "name": "лёвкин",
+        "_id": "f1e0ca977aa8747e39e1cb23",
+        "firstTime": 1608358758095,
+        "color": "#e3e2bc",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "лёвкин"
+        ]
+    },
+    "4490df63ac759c0f9fb8d707": {
+        "name": "Anonymous",
+        "_id": "4490df63ac759c0f9fb8d707",
+        "firstTime": 1608358899681,
+        "color": "#3f5f99",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous"
+        ]
+    },
+    "ead4f8cda8b22aa2a58a3201": {
+        "name": "Anonymous",
+        "_id": "ead4f8cda8b22aa2a58a3201",
+        "firstTime": 1608359026861,
+        "color": "#ab3b40",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous"
+        ]
+    },
+    "c0e13693b2683cfbddbc7a6e": {
+        "name": "sans",
+        "_id": "c0e13693b2683cfbddbc7a6e",
+        "firstTime": 1608360154827,
+        "color": "#6b0f40",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "sans"
+        ]
+    },
+    "795ad1cb62eb67a314b0ee87": {
+        "name": "٠●๑ ⎝⏠⏝⏠⎠ ๑●•٠·ℰℜℜტℜ٠●๑ ⎝⏠⏝⏠⎠ ๑●•٠·",
+        "_id": "795ad1cb62eb67a314b0ee87",
+        "firstTime": 1608360310943,
+        "color": "#57cb74",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "٠●๑ ⎝⏠⏝⏠⎠ ๑●•٠·ℰℜℜტℜ٠●๑ ⎝⏠⏝⏠⎠ ๑●•٠·"
+        ]
+    },
+    "0f878f2fd71449abc980e95b": {
+        "name": "deeveedee [dvd!stats]",
+        "_id": "0f878f2fd71449abc980e95b",
+        "firstTime": 1608360325357,
+        "color": "#572751",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous",
+            "deeveedee [dvd!stats]"
+        ]
+    },
+    "6289fcdc41d1b7b3d0c238a0": {
+        "name": "lol",
+        "_id": "6289fcdc41d1b7b3d0c238a0",
+        "firstTime": 1608361615953,
+        "color": "#1f17cb",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "knight theme boi",
+            "bot",
+            "lol"
+        ]
+    },
+    "5b1a597eafac714b336969be": {
+        "name": "Anonymous",
+        "_id": "5b1a597eafac714b336969be",
+        "firstTime": 1608361800158,
+        "color": "#1ec6e3",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous"
+        ]
+    },
+    "0522ef090620c416763db492": {
+        "name": "яоляя5785476895462135986564854200000000",
+        "_id": "0522ef090620c416763db492",
+        "firstTime": 1608362830870,
+        "color": "#241105",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous",
+            "яоляя5785476895462135986564854200000000"
+        ]
+    },
+    "9125bf594362972d78591629": {
+        "name": "word bot [isanonygold TEXT]",
+        "_id": "9125bf594362972d78591629",
+        "firstTime": 1608363426011,
+        "color": "#af36b9",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "❤️",
+            "AI Math thingy [+add Number Number]",
+            "AI Math thingy [*times Number Number]",
+            "word bot [isanonygold TEXT]"
+        ]
+    },
+    "483cf89ef8b69c421c70f5c5": {
+        "name": ";0-0;",
+        "_id": "483cf89ef8b69c421c70f5c5",
+        "firstTime": 1608363470567,
+        "color": "#3fa858",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            ";0-0;"
+        ]
+    },
+    "93169531a1535c77f107fd16": {
+        "name": "котёнок милашка  имя элька",
+        "_id": "93169531a1535c77f107fd16",
+        "firstTime": 1608364223725,
+        "color": "#e86d44",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "котёнок милашка  имя элька"
+        ]
+    },
+    "e95654ab35b068c521192780": {
+        "name": "deeveedee [dvd!stats]",
+        "_id": "e95654ab35b068c521192780",
+        "firstTime": 1608364712596,
+        "color": "#068f52",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous",
+            "deeveedee [dvd!stats]"
+        ]
+    },
+    "febb18e8a1df5585ae554793": {
+        "name": "VOVa blat",
+        "_id": "febb18e8a1df5585ae554793",
+        "firstTime": 1608364744952,
+        "color": "#a3d5c6",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "VOVa blat"
+        ]
+    },
+    "c5a3acc945713e63960edcee": {
+        "name": "Anonymous",
+        "_id": "c5a3acc945713e63960edcee",
+        "firstTime": 1608365138385,
+        "color": "#2ae2e2",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous"
         ]
     }
 }

@@ -31,6 +31,7 @@ module.exports = class {
                 }
                 p = {
                     _id: id,
+                    id: id,
                     name: name,
                     color: color
                 }
@@ -42,11 +43,13 @@ module.exports = class {
                 }
             }
             ws.send(JSON.stringify(p), err => {
-                console.error(err);
+                if (err) {
+                    console.error(err);
+                }
             });
 
             ws.on('message', async data => {
-                let msg = JSON.stringify('msg');
+                let msg = JSON.parse(data);
                 if (msg.p !== p) {
                     msg.p = p;
                 }
@@ -55,6 +58,13 @@ module.exports = class {
                     case "a":
                         if (typeof(msg.a) == 'undefined') return;
                         msg.args = msg.a.split(' ');
+                        msg.rank = bot.userdb.getRank(msg.p);
+                        if (typeof(msg.rank) === 'undefined') {
+                            msg.rank = {
+                                id: 0,
+                                name: "User"
+                            }
+                        }
                         bot.prefixes.forEach(async prefix => {
                             if (msg.args[0].split(prefix)) {
                                 msg.cmd = msg.args[0].split(prefix).splice(0, 2).join("").trim();
@@ -63,16 +73,24 @@ module.exports = class {
                                 if (typeof(out) === "undefined") return;
                                 if (typeof(out) === "undefined") return;
                                 let s = {
+                                    m: 'a',
                                     p: {
                                         name: "7566",
                                         color: "#000000",
-                                        _id: "ead940199c7d9717e5149919"
+                                        _id: "ead940199c7d9717e5149919",
+                                        id: "ead940199c7d9717e5149919"
                                     },
-                                    a: "Connected"
+                                    a: out
                                 }
                                 ws.send(JSON.stringify(s));
                             }
                         });
+                        break;
+                    case "get":
+                        ws.send(JSON.stringify({
+                            p: p,
+                            m: 'get'
+                        }));
                         break;
                 }
             });
