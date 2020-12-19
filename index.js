@@ -101,7 +101,7 @@ rl.on('line', input => {
         if (msg.args[0].startsWith(prefix)) {
             msg.cmd = msg.args[0].split(prefix).slice(0, 2).join("").trim();
             msg.argcat = msg.a.substring(msg.cmd.length + 1 + 2).trim();
-            let out = bot.runCommand(bot.findCommand(msg.cmd), msg);
+            let out = await bot.runCommand(bot.findCommand(msg.cmd), msg);
             if (typeof(out) === "undefined") return;
             if (typeof(out) === typeof(undefined)) return;
             console.log(out);
