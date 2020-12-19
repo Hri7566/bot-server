@@ -44,8 +44,11 @@ hmppbot = new MPPBot('wss://hri7566.info:2050', bot, "HMPP");
 const DBot = require('./discordbot');
 const dbot = new DBot(bot);
 
-const Website = require('./website');
-const website = new Website();
+// const Website = require('./website');
+// const website = new Website();
+
+const WSServer = require('./wss');
+const wsserver = new WSServer(process.env.PORT);
 
 const Emoji = require('./Emoji');
 const emoji = new Emoji('./emoji.json');
@@ -53,7 +56,7 @@ const emoji = new Emoji('./emoji.json');
 const Minigames = require('./minigames');
 bot.minigames = new Minigames(bot);
 
-website.start();
+// website.start();
 dbot.start();
 
 /**
@@ -119,29 +122,34 @@ dbot.listen();
  * Website & Websocket listener
  */
 
-website.callback = (msg) => {
-    msg.args = msg.a.split(' ');
-    msg.rank = bot.userdb.getRank(msg.p);
-    bot.prefixes.forEach(prefix => {
-        if (msg.args[0].startsWith(prefix)) {
-            msg.cmd = msg.args[0].split(prefix).slice(0, 2).join("").trim();
-            msg.argcat = msg.a.substring(msg.cmd.length + 1).trim();
-            m = {
-                rank: {
-                    id: 4,
-                    name: "Owner"
-                },
-                p: {
-                    name: "7566",
-                    _id: msg.p._id,
-                    color: "#000000"
-                },
-                a: bot.runCommand(bot.findCommand(msg.cmd), msg)
-            };
-            website.send(m);
-        }
-    });
-};
+// website.callback = (msg) => {
+//     msg.args = msg.a.split(' ');
+//     msg.rank = bot.userdb.getRank(msg.p);
+//     bot.prefixes.forEach(prefix => {
+//         if (msg.args[0].startsWith(prefix)) {
+//             msg.cmd = msg.args[0].split(prefix).slice(0, 2).join("").trim();
+//             msg.argcat = msg.a.substring(msg.cmd.length + 1).trim();
+//             m = {
+//                 rank: {
+//                     id: 4,
+//                     name: "Owner"
+//                 },
+//                 p: {
+//                     name: "7566",
+//                     _id: msg.p._id,
+//                     color: "#000000"
+//                 },
+//                 a: bot.runCommand(bot.findCommand(msg.cmd), msg)
+//             };
+//             website.send(m);
+//         }
+//     });
+// };
+
+/**
+ * WebSocket Server
+ */
+wsserver.start(bot);
 
 /**
  * Register extra commands
