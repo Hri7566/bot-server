@@ -1,9 +1,9 @@
 const Command = require('../bot/Command');
 
-module.exports = new Command("love", `Usage: PREFIXlove <user>`, 1, (msg, bot) => {
+module.exports = new Command("hug", `Usage: PREFIXhug <user>`, 1, (msg, bot) => {
     let user = bot.userdb.getUserByNameOrId(msg.argcat);
     if (typeof(user) !== 'undefined') {
-        return `${msg.p.name} loves ${user.name}!`;
+        return `${msg.p.name} hugged ${user.name}!`;
     } else {
         return `Could not find user.`;
     }
