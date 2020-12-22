@@ -22340,7 +22340,7 @@
         "inventory": []
     },
     "2db484f194f5e17e455da94c": {
-        "name": "🎄⛄ Fishi [>help] 🎁 5 days 🎄⛄",
+        "name": "🎄⛄ Fishi [>help] 🎁 3 days 🎄⛄",
         "_id": "2db484f194f5e17e455da94c",
         "firstTime": 1605925192179,
         "color": "#fd290a",
@@ -22355,7 +22355,8 @@
             "🎄⛄ Fishi [>help] 🎄⛄",
             ".bal 🎄⛄ Fishi [>help] 🎄⛄",
             "🎄⛄ Fishi [>help] 🎁 6 days 🎄⛄",
-            "🎄⛄ Fishi [>help] 🎁 5 days 🎄⛄"
+            "🎄⛄ Fishi [>help] 🎁 5 days 🎄⛄",
+            "🎄⛄ Fishi [>help] 🎁 3 days 🎄⛄"
         ]
     },
     "940f3096c1c12bdf4100f659": {
@@ -50688,7 +50689,7 @@
         ]
     },
     "3b38dc0d37ed0ef1a1a3a29c": {
-        "name": "False banning help (not a bot. !human)",
+        "name": "Not me",
         "_id": "3b38dc0d37ed0ef1a1a3a29c",
         "firstTime": 1607379490177,
         "color": "#e56631",
@@ -50721,7 +50722,9 @@
             "Fishi, Ebot, aeiou (great admins)",
             "Fishi, Ebot, aeiou, No., (great admins)",
             "*dies",
-            "False banning help (not a bot. !human)"
+            "False banning help (not a bot. !human)",
+            "Person Locater [off shift]",
+            "Not me"
         ]
     },
     "dc741544efa0ec7e904a8515": {
@@ -99167,6 +99170,218 @@
         "names": [
             "Tanoshīツ (t!help)",
             "deeveedee [dvd!stats]"
+        ]
+    },
+    "5de5565642f6eafeae3ffa03": {
+        "name": "deeveedee [dvd!stats]",
+        "_id": "5de5565642f6eafeae3ffa03",
+        "firstTime": 1608617766850,
+        "color": "#d07dd2",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": []
+    },
+    "53e0e2bbcab2b4a84bf2b866": {
+        "name": "🎄🦌 Reindeer [.help] ⛄🎁",
+        "_id": "53e0e2bbcab2b4a84bf2b866",
+        "firstTime": 1608617770119,
+        "color": "#bf88d8",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "❤️",
+            "🎄🦌 Reindeer [.help] ⛄🎁"
+        ]
+    },
+    "2e4f435eff1cbdf199e95cbc": {
+        "name": "КСЮША ШАМАЙВА",
+        "_id": "2e4f435eff1cbdf199e95cbc",
+        "firstTime": 1608617815794,
+        "color": "#408681",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "КСЮША ШАМАЙВА"
+        ]
+    },
+    "3b806954c118d09f3a570dd2": {
+        "name": "🦌🎄 ProxyPlayer 🎁⛄",
+        "_id": "3b806954c118d09f3a570dd2",
+        "firstTime": 1608617895500,
+        "color": "#ce9860",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "NMPB",
+            "🦌🎄 ProxyPlayer 🎁⛄"
+        ]
+    },
+    "6b3dc4c1a740d8dbb4a2f3e6": {
+        "name": "🦌🎄 ProxyPlayer 🎁⛄",
+        "_id": "6b3dc4c1a740d8dbb4a2f3e6",
+        "firstTime": 1608618036693,
+        "color": "#c13d43",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous",
+            "🦌🎄 ProxyPlayer 🎁⛄"
+        ]
+    },
+    "26a7b5b7d4764820c958091b": {
+        "name": "КРАСАВИТЦА (я не фейк)",
+        "_id": "26a7b5b7d4764820c958091b",
+        "firstTime": 1608618670975,
+        "color": "#c506e2",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "КРАСАВИТЦА (я не фейк)"
+        ]
+    },
+    "21404f3f15d76480867aefd5": {
+        "name": "꧁☆☬Jyugo☬☆꧂",
+        "_id": "21404f3f15d76480867aefd5",
+        "firstTime": 1608619052970,
+        "color": "#a7acac",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "꧁☆☬Jyugo☬☆꧂"
+        ]
+    },
+    "efe116f2d8d00263f865eb3d": {
+        "name": "deeveedee [dvd!stats]",
+        "_id": "efe116f2d8d00263f865eb3d",
+        "firstTime": 1608619600289,
+        "color": "#1cf352",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous",
+            "deeveedee [dvd!stats]"
+        ]
+    },
+    "e78c721fe229cc0598392963": {
+        "name": "🎄🦌 Reindeer [.help] ⛄🎁",
+        "_id": "e78c721fe229cc0598392963",
+        "firstTime": 1608619717020,
+        "color": "#7987cb",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous",
+            "🎄🦌 Reindeer [.help] ⛄🎁"
+        ]
+    },
+    "aec8ad747528cd002cdb0ec2": {
+        "name": "🦌🎄 ProxyPlayer 🎁⛄",
+        "_id": "aec8ad747528cd002cdb0ec2",
+        "firstTime": 1608619976182,
+        "color": "#b3b561",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous",
+            "🦌🎄 ProxyPlayer 🎁⛄"
+        ]
+    },
+    "193b7526884586d694c7a5ee": {
+        "name": "Krlvk",
+        "_id": "193b7526884586d694c7a5ee",
+        "firstTime": 1608620059142,
+        "color": "#5ae017",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Krlvk"
+        ]
+    },
+    "09ffa67e10e16a11dc9c094a": {
+        "name": "Anonymous",
+        "_id": "09ffa67e10e16a11dc9c094a",
+        "firstTime": 1608620106283,
+        "color": "#464d6b",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous"
+        ]
+    },
+    "82c66489ac301b7d8c63ec24": {
+        "name": "🦌🎄 ProxyPlayer 🎁⛄",
+        "_id": "82c66489ac301b7d8c63ec24",
+        "firstTime": 1608620189632,
+        "color": "#dd95da",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Khorne Bot [-help]",
+            "🦌🎄 ProxyPlayer 🎁⛄"
         ]
     }
 }
