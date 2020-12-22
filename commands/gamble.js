@@ -1,6 +1,6 @@
 const Command = require('../bot/Command');
 
-module.exports = new Command("gamble", `Usage: PREFIXgamble <gamble amount>`, 1, (msg, bot) => {
+module.exports = new Command("gamble", `Usage: PREFIXgamble <gamble amount> | Take a chance and try to win more money`, 1, (msg, bot) => {
     let arr = bot.minigames.getGameByName("gamble").run(msg);
     if (arr == "high") {
         return "You don't have that much money.";

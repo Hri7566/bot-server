@@ -1,6 +1,6 @@
 const Command = require('../bot/Command');
 
-module.exports = new Command("hit", `Usage: PREFIXhit <item> <stuff>`, 2, (msg, bot) => {
+module.exports = new Command("hit", `Usage: PREFIXhit <item> <stuff> | Currently useless`, 2, (msg, bot) => {
     let good = false;
     let inv = bot.userdb.getInv(msg.p);
     let wep;

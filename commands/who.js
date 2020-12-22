@@ -27,7 +27,7 @@ function timeSince(date) {
     return Math.floor(seconds) + " seconds";
 }
 
-module.exports = new Command(["who","whois"], `Usage: PREFIXwho <person>`, 0, (msg, bot) => {
+module.exports = new Command(["who","whois"], `Usage: PREFIXwho <person> | Get info on someone`, 0, (msg, bot) => {
     let user = bot.userdb.getUser(msg.p);
     if (msg.args[1]) {
         user = bot.userdb.getUserByNameOrId(msg.argcat);

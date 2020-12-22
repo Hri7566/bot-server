@@ -1,6 +1,6 @@
 const Command = require('../bot/Command');
 
-module.exports = new Command("sell", `Usage: PREFIXsell <item> <amount>`, 0, (msg, bot) => {
+module.exports = new Command("sell", `Usage: PREFIXsell <item> <amount> | Sell items in your inventory`, 0, (msg, bot) => {
     if (typeof(msg.args[1]) !== "string") {
         return "First argument must be a valid item.";
     }

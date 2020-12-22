@@ -1,6 +1,6 @@
 const Command = require('../bot/Command');
 
-module.exports = new Command(["shoplist","shop"], `Usage: PREFIXshoplist`, 0, (msg, bot) => {
+module.exports = new Command(["shoplist","shop"], `Usage: PREFIXshoplist | List everything in the shop`, 0, (msg, bot) => {
     let str = "Shop:";
     let items = bot.userdb.getShopList();
     items.forEach(i => {

@@ -1,7 +1,7 @@
 const Command = require('../bot/Command');
 const exec = require('util').promisify(require('child_process').exec);
 
-module.exports = new Command('eval', `Usage: PREFIXeval <command>`, 1, async (msg, bot) => {
+module.exports = new Command('eval', `Usage: PREFIXeval <command> | Evaluate a linux command (buggy)`, 1, async (msg, bot) => {
     let ret = await exec(msg.argcat, (err, stdout, stderr) => {
         if (err) {
             return err;

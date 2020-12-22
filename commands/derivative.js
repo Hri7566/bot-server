@@ -1,7 +1,7 @@
 const Command = require('../bot/Command');
 const math = require('mathjs');
 
-module.exports = new Command(["derivative","deriv"], `Usage: PREFIXderivative <eval string>`, 1, (msg, bot) => {
+module.exports = new Command(["derivative","deriv"], `Usage: PREFIXderivative <function> /// <var> | Calculus: Get the derivative of a function (use <var> to set the variable used)`, 1, (msg, bot) => {
     let ret = "";
     let argcats = msg.argcat.split('///');
     try {

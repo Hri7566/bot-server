@@ -1,7 +1,7 @@
 const Command = require('../bot/Command');
 const math = require('mathjs');
 
-module.exports = new Command(["rationalize","rat"], `Usage: PREFIXderivative <eval string>`, 1, (msg, bot) => {
+module.exports = new Command(["rationalize","rat"], `Usage: PREFIXrationalize <eval string> | Calculus: Rationalize`, 1, (msg, bot) => {
     let ret = "";
     try {
         ret = `${math.rationalize(msg.argcat)}`;

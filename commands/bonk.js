@@ -1,6 +1,6 @@
 const Command = require('../bot/Command');
 
-module.exports = new Command("bonk", `Usage: PREFIXbonk <stuff>`, 1, (msg, bot) => {
+module.exports = new Command("bonk", `Usage: PREFIXbonk <stuff> | funny hammer go hit`, 1, (msg, bot) => {
     let good = false;
     let inv = bot.userdb.getInv(msg.p);
     let playerToHit = bot.userdb.getUserByNameOrId(msg.argcat);

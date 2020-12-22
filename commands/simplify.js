@@ -1,7 +1,7 @@
 const Command = require('../bot/Command');
 const math = require('mathjs');
 
-module.exports = new Command(["simplify","simp"], `Usage: PREFIXsimplify <eval string>`, 1, (msg, bot) => {
+module.exports = new Command(["simplify","simp"], `Usage: PREFIXsimplify <eval string> | Calculus: Simplify an expression`, 1, (msg, bot) => {
     let ret = "";
     try {
         ret = `${math.simplify(msg.argcat)}`;

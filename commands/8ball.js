@@ -23,6 +23,6 @@ var answers = [
     "You may rely on it"
 ];
 
-module.exports = new Command(["8ball","magic8ball","8"], `Usage: PREFIX8ball <polar question>`, 1, msg => {
+module.exports = new Command(["8ball","magic8ball","8"], `Usage: PREFIX8ball <polar question> | Magic 8 ball`, 1, msg => {
     return `${answers[Math.floor(Math.random()*answers.length)]}, ${msg.p.name}.`;
 }, 0, false);

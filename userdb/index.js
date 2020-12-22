@@ -44,7 +44,9 @@ module.exports = class {
             let data = JSON.stringify(this.users, null, 4);
             if (typeof(data) !== "undefined" && data !== null) {
                 fs.writeFile(__dirname+'/users.json', data, (err) => {if (err) {console.error(err)}});
-                this.users = require('./users.json');
+                setTimeout(() => {
+                    this.users = require('./users.json');
+                }, 10000)
             }
         } catch (err) {
             if (err) {
