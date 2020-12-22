@@ -1,3 +1,5 @@
+//TODO: cmd usages
+
 console.log("┌────────────────────────────────────────────┐");
 console.log("│ooooooooo   oooooooo     .ooo       .ooo    │");
 console.log(`│d"""""""8'  dP"""""""   .88'       .88'     │`);

@@ -99383,5 +99383,21 @@
             "Khorne Bot [-help]",
             "🦌🎄 ProxyPlayer 🎁⛄"
         ]
+    },
+    "102942af7f2a9b9159a4cb90": {
+        "name": "Anonymous",
+        "_id": "102942af7f2a9b9159a4cb90",
+        "firstTime": 1608620792165,
+        "color": "#e37624",
+        "rank": {
+            "name": "User",
+            "id": 0
+        },
+        "balance": 0,
+        "claimTime": 0,
+        "inventory": [],
+        "names": [
+            "Anonymous"
+        ]
     }
 }
