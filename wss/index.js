@@ -2,6 +2,8 @@
 
 const sha1 = require('sha1');
 const WebSocket = require('ws');
+const https = require('https');
+const fs = require('fs');
 
 module.exports = class {
     constructor (port) {
@@ -13,9 +15,13 @@ module.exports = class {
         }
     }
 
-    start(bot) {
+    start(bot) { 
         this.wss = new WebSocket.Server({
-            port: this.port,
+            server: https.createServer({
+                key: fs.readFileSync("./private.key"),
+                cert: fs.readFileSync("./certificate.crt"),
+                ca: fs.readFileSync("./ca_bundle.crt")
+            }).listen(this.port)
         });
         let wss = this.wss;
         wss.on('connection', (ws, req) => {
@@ -51,7 +57,16 @@ module.exports = class {
             });
 
             ws.on('message', async data => {
-                let msg = JSON.parse(data);
+                let c = true;
+                let msg;
+                try {
+                    msg = JSON.parse(data);
+                } catch(err) {
+                    if (err) {
+                        c = false;
+                    }
+                }
+                if (!c) return;
                 if (msg.p !== p) {
                     msg.p = p;
                 }
