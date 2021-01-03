@@ -1,4 +1,8 @@
-//TODO: cmd usages
+// TODO: Fix the WebSocket server
+// TODO: Make a new repo for replacement MPP bot
+// TODO: Do the same for all other connections
+// TODO: Do that until the only thing left is the websocket service
+// TODO: Fix the ping command
 
 console.log("┌────────────────────────────────────────────┐");
 console.log("│ooooooooo   oooooooo     .ooo       .ooo    │");
@@ -52,31 +56,11 @@ const dbot = new DBot(bot);
 const WSServer = require('./wss');
 const wsserver = new WSServer(process.env.PORT);
 
-const Emoji = require('./Emoji');
-const emoji = new Emoji('./emoji.json');
-
 const Minigames = require('./minigames');
 bot.minigames = new Minigames(bot);
 
 // website.start();
 dbot.start();
-
-/**
- * Startup magic
- */
-
-try {
-    let files = fs.readdirSync(__dirname+"/commands");
-    files.forEach(file => {
-        if (!file.endsWith('.js') && !file.endsWith('.ts')) return;
-        let command = require("./commands/"+file);
-        bot.commandRegistry.registerCommandObj(command);
-    });
-} catch (err) {
-    if (err) {
-        console.error(err);
-    }
-}
 
 /**
  * MPP Listener

@@ -8,8 +8,6 @@ const { userInfo } = require('os');
 module.exports = class {
     constructor () {
         this.users = require('./users.json');
-
-        //TODO: fishi wants orange juice
         this.shop = require('./shop.json');
         this.defaultUser = new User('Anonymous', '2ad783be5f1bd100739f6b55', Date.now(), "#555555");
         this.currencySymbol = "H$";

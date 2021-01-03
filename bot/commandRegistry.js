@@ -1,5 +1,7 @@
 //! finish this soon
 
+const fs = require('fs');
+
 module.exports = (bot) => {
     return new CommandRegistry(bot);
 }
@@ -8,6 +10,7 @@ const CommandRegistry = class {
     constructor (bot) {
         this.bot = bot;
         this.registerDefaultCommands(this.bot);
+        this.registerFolder();
     }
 
     registerCommand(cmd, usage, minargs, func, minrank, hidden) {
@@ -52,7 +55,12 @@ const CommandRegistry = class {
         });
     
         this.registerCommand("rank", `Usage: PREFIXrank`, 0, msg => {
-            return `Your rank: ${msg.rank.name} | Rank ID: ${msg.rank.id}`;
+            if (!msg.args[1]) {
+                return `Your rank: ${msg.rank.name} | Rank ID: ${msg.rank.id}`;
+            } else {
+                let user = bot.userdb.findUser(msg.argcat);
+                return `${user.name}'s rank: ${user.rank.name} | Rank ID: ${user.rank.id}`;
+            }
         });
     
         this.registerCommand("js", `Usage: PREFIXjs <eval>`, 0, msg => {
@@ -66,5 +74,20 @@ const CommandRegistry = class {
                 }
             }
         }, 4, true);
+    }
+
+    registerFolder() {
+        try {
+            let files = fs.readdirSync(__dirname+"/commands");
+            files.forEach(file => {
+                if (!file.endsWith('.js')) return;
+                let command = require("./commands/"+file);
+                this.registerCommandObj(command);
+            });
+        } catch (err) {
+            if (err) {
+                console.error(err);
+            }
+        }
     }
 }

@@ -106,6 +106,14 @@
             "price": 100,
             "edible": false,
             "weapon": true
+        },
+        {
+            "name": "oj",
+            "desc": "A nice cup of orange juice.",
+            "id": 12,
+            "price": 25,
+            "edible": true,
+            "drink": true
         }
     ]
 }
