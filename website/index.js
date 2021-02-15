@@ -13,9 +13,9 @@ module.exports = class {
     constructor () {
         this.app = Express().use(bodyParser.json());
         this.options = {
-            key: fs.readFileSync("./private.key"),
-            cert: fs.readFileSync("./certificate.crt"),
-            ca: fs.readFileSync("./ca_bundle.crt")
+            // key: fs.readFileSync("./private.key"),
+            // cert: fs.readFileSync("./certificate.crt"),
+            // ca: fs.readFileSync("./ca_bundle.crt")
         };
         this.clients = [];
         this.alg = 'aes-256-ctr';
@@ -25,7 +25,7 @@ module.exports = class {
 
     start() {
         this.iv = Crypto.randomBytes(16);
-        this.server = https.createServer(this.options, this.app).listen(8080);
+        this.server = http/*s*/.createServer(/*this.options,*/ this.app).listen(8080);
         this.ws = new WebSocket.Server({server:this.server});
         this.app.set('view engine', "pug");
         this.app.use(Express.static('public'));

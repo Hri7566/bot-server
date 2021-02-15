@@ -15,12 +15,12 @@ module.exports = class {
         }
     }
 
-    start(bot) { 
+    start(bot) {
         this.wss = new WebSocket.Server({
             server: https.createServer({
-                key: fs.readFileSync("./private.key"),
-                cert: fs.readFileSync("./certificate.crt"),
-                ca: fs.readFileSync("./ca_bundle.crt")
+                // key: fs.readFileSync("/etc//privkey.pem"),
+                // cert: fs.readFileSync("/etc//cert.pem"),
+                // ca: fs.readFileSync("/etc//fullchain.pem")
             }).listen(this.port)
         });
         let wss = this.wss;

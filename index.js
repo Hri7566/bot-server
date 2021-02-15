@@ -41,7 +41,7 @@ bot.userdb = new UserDB();
 
 global.MPPBot = require('./mppbot');
 mppbot = new MPPBot("wss://www.multiplayerpiano.com:443", bot, "RP Room");
-hmppbot = new MPPBot('wss://hri7566.info:2050', bot, "HMPP");
+hmppbot = new MPPBot('wss://0.0.0.0:2050', bot, "HMPP");
 
 const DBot = require('./discordbot');
 const dbot = new DBot(bot);
